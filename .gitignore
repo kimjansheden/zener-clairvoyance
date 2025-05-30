@@ -54,6 +54,7 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+*.backup
 port.txt
 
 # MacOS
