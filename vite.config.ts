@@ -13,6 +13,19 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Explicit production security settings
+  build: {
+    // Remove console.log in production builds
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove all console statements
+        drop_debugger: true, // Remove debugger statements
+      },
+    },
+    // Disable source maps in production for security
+    sourcemap: false,
+  },
   // Proxy API requests to the backend server using the dynamic port
   server: {
     proxy: {
